@@ -12,9 +12,9 @@ router.post("/show", async (req, res) => {
     }
 });
 
-router.get("/", async (req, res) => {
+router.get("/shows/:id", async (req, res) => {
     try {
-        const shows = await Show.find().lean().exec();
+        const shows = await Show.find({movie: req.params.id}).lean().exec();
         return res.status(201).send({shows});
     } catch (error) {
         return res.status(500).send({error: error.message, status: "failed"});

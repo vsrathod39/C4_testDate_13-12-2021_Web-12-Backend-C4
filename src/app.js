@@ -13,8 +13,9 @@ app.use("/users", userController);
 app.use("/post", movieController);
 app.use("/screens", screenController);
 app.use("/post", showController);
+app.use("/get", showController);
 
 app.listen(2345, async () => {
     await connect();
-    console.log("Listening at port 2343...");
+    console.log("Listening at port 2345...");
 })
