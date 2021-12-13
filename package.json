@@ -1,0 +1,24 @@
+{
+  "name": "C4_testDate_13-12-2021_Web-12-Backend-C4",
+  "version": "1.0.0",
+  "description": "C4 unit4 Web12 fw_132",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsrathod39/C4_testDate_13-12-2021_Web-12-Backend-C4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vsrathod39/C4_testDate_13-12-2021_Web-12-Backend-C4/issues"
+  },
+  "homepage": "https://github.com/vsrathod39/C4_testDate_13-12-2021_Web-12-Backend-C4#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.1.1"
+  }
+}
