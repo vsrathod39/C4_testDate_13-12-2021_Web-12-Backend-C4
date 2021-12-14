@@ -12,10 +12,21 @@ router.post("/movies", async (req, res) => {
     }
 });
 
-router.get("/movies", async (req, res) => {
+router.get("/movies/", async (req, res) => {
     try {
-        const movies = await Movie.find().lean().exec();
-        return res.status(201).send({movies});
+        let movies = await Movie.find().populate("actor", "name").lean().exec();
+        // movies = movies.map((obj) => {
+        //     return obj.actor;
+        // });
+        let finalColle = [];
+        for(let i = 0; i < movies.length; i++){
+            for(let j = 0; j < movies[i].actor.length; j++){
+                if(movies[i].actor[j].name === req.body.name){
+                    finalColle.push(movies[i]);
+                }
+            }
+        }
+        return res.status(201).send({finalColle});
     } catch (error) {
         return res.status(500).send({error: error.message, status: "failed"});
     }
