@@ -15,9 +15,7 @@ router.post("/movies", async (req, res) => {
 router.get("/movies/", async (req, res) => {
     try {
         let movies = await Movie.find().populate("actor", "name").lean().exec();
-        // movies = movies.map((obj) => {
-        //     return obj.actor;
-        // });
+        
         let finalColle = [];
         for(let i = 0; i < movies.length; i++){
             for(let j = 0; j < movies[i].actor.length; j++){
