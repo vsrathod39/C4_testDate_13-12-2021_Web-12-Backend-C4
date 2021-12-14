@@ -12,7 +12,7 @@ router.post("/movies", async (req, res) => {
     }
 });
 
-router.get("/movies/", async (req, res) => {
+router.get("/movies", async (req, res) => {
     try {
         let movies = await Movie.find().populate("actor", "name").lean().exec();
         
